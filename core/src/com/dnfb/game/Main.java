@@ -6,6 +6,8 @@ import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
 import manage.GSM;
+import sprite.Character1;
+import state.MenuState;
 import state.PlayingState;
 
 public class Main extends ApplicationAdapter {
@@ -18,8 +20,7 @@ public class Main extends ApplicationAdapter {
 	@Override
 	public void create () {
 		batch = new SpriteBatch();
-		gsm = new GSM();
-		gsm.push(new PlayingState(gsm));
+		gsm.push(new MenuState(gsm));
 		Gdx.gl.glClearColor(1, 0, 0, 1);
 	}
 

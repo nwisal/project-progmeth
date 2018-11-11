@@ -22,9 +22,9 @@ public class PlayingState extends State {
 	private Vector2 Posground1,Posground2;
 	private Texture ground;
 	
-	public PlayingState(GSM gsm) {
+	public PlayingState(GSM gsm, Character choosenChar) {
 		super(gsm);
-		ch = new Character1(50,300);
+		ch = choosenChar;
 		tubes = new Array<Tube>();
 		for(int i=0;i<TUBE_COUNT;i++) {
 			tubes.add(new Tube("topTube.png", "botTube.png", 200+i*(TUBE_SPACE+Tube.TUBE_WIDTH)));
@@ -58,11 +58,11 @@ public class PlayingState extends State {
 				t.rePos(t.getPosTopTube().x+(Tube.TUBE_WIDTH+TUBE_SPACE)*TUBE_COUNT);
 			}
 			if(t.collides(ch.getHitBox())) {
-				gsm.set(new PlayingState(gsm));
+				gsm.set(new MenuState(gsm));
 			}
 		}
 		if(ch.getPosition().y<=ground.getHeight()+GROUND_HIGHT_OFFSET) {
-			gsm.set(new PlayingState(gsm));
+			gsm.set(new MenuState(gsm));
 		}
 		cam.update();
 	}
