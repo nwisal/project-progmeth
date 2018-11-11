@@ -44,7 +44,7 @@ public class PlayingState extends State {
 
 	@Override
 	public void update(float dt) {
-		handelInput();
+		handleInput();
 		ch.update(dt);
 		if(cam.position.x-(cam.viewportWidth/2)>Posground1.x+ground.getWidth()) {
 			Posground1.add(ground.getWidth()*2,0);
