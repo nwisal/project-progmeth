@@ -17,7 +17,7 @@ public abstract class State {
 		mouse = new Vector2();
 	}
 	
-	protected abstract void handelInput();
+	protected abstract void handleInput();
 	public abstract void update(float dt);
 	public abstract void render(SpriteBatch sb);
 	public abstract void dispose();

@@ -36,7 +36,7 @@ public class PlayingState extends State {
 	}
 
 	@Override
-	protected void handelInput() {
+	protected void handleInput() {
 		if(Gdx.input.isTouched()) {
 			ch.fly();
 		}
